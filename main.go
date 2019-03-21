@@ -14,7 +14,7 @@ func (handler) ServeHTTP(responseWriter http.ResponseWriter, request *http.Reque
 		return
 	}
 	responseWriter.Header().Set("Content-Type", "applicaiton/octet-stream")
-	responseWriter.Header().Set("Content-Disposition", "attachment; filename=client.ovpn")
+	responseWriter.Header().Set("Content-Disposition", "attachment; filename="+filename)
 	http.ServeFile(responseWriter, request, filename)
 }
 
